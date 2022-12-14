@@ -1,0 +1,230 @@
+<html>
+<head>
+<style>
+body {
+  padding-top: 20px;
+  background-color: grey;
+}
+
+</style>
+</head>
+<body bgColor="lightwhite">
+<script language="JavaScript">
+onoff=0
+mem=0
+n=0
+p=0
+pw=0
+function perc()
+{
+  if(onoff==1)
+  {
+   n=parseInt(t1.value)
+   t1.value=0
+   p=1
+  }
+}
+
+function pow()
+ {
+   if(onoff==1)
+   {
+    n=parseInt(t1.value)
+    t1.value=0
+    pw=1
+   }
+ }
+
+function on()
+{
+ onoff=1
+ t1.value=0
+}
+function off()
+{
+   onoff=0
+   t1.value=""
+}
+
+function sin()
+{
+  if(onoff==1)
+  {
+   t1.value=Math.sin(t1.value)
+  }
+}
+
+function cos()
+{
+  if(onoff==1)
+  {
+   t1.value=Math.cos(t1.value)
+  }
+}
+
+function tan()
+{
+  if(onoff==1)
+  {
+   t1.value=Math.tan(t1.value)
+  }
+}
+
+function sqrt()
+{
+  if(onoff==1)
+  {
+   t1.value=Math.sqrt(t1.value)
+  }
+}
+
+function log()
+{
+  if(onoff==1)
+  {
+   t1.value=Math.log(t1.value)
+  }
+}
+
+function add(b)
+{
+   if(onoff==1)
+   {
+    if(t1.value==0)
+       t1.value=""
+    t1.value=t1.value+b.value
+   }
+}
+
+function calc()
+{
+  if(onoff==1)
+  {
+     if(p==1)
+    {
+       m=parseInt(t1.value)
+      t1.value=n*m/100
+      p=0
+    }
+  else if(pw==1)
+   {
+           m=parseInt(t1.value)
+          k=n
+          for(i=1;i<m; i++)
+           {
+              k=k*n;
+           }
+          t1.value=k
+          pw=0   
+    }
+   else
+     t1.value=eval(t1.value)
+  }
+}
+
+function clea()
+{
+   if(onoff==1)
+    t1.value=0
+}
+
+function DT()
+{
+  if(onoff==1)
+  {
+    dt=new Date
+    t1.value=dt 
+  }
+}
+
+function D()
+{
+  if(onoff==1)
+  {
+  dt=new Date
+  m=dt.getMonth() +1
+  t1.value=dt.getDate() + "/" + m + "/" + dt.getYear()
+  }
+}
+function T()
+{
+  if(onoff==1)
+  {
+  dt=new Date
+  t1.value=dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds()
+  }
+}
+
+function mc()
+{
+  if(onoff==1)
+  {
+   mem=t1.value
+  }
+}
+
+function mp()
+{
+  if(onoff==1)
+  {
+   t1.value=t1.value+mem
+  }
+}
+
+function bk()
+{
+  if(onoff==1)
+  {
+  s=t1.value
+  t1.value=s.substr(0, s.length-1)
+  }
+}
+</script>
+<center>
+<h1>Scientific calculator</h1>
+<table border=5 bgcolor=grey bordercolor=black> <tr><td>
+<input type=text name=t1 style="text-align:right" size=34 disabled><br>
+
+<input type=button name=b0 value=0 style="height:40;width:40;background:black;color:white" onClick="add(b0)">
+<input type=button name=b1 value=1 style="height:40;width:40;background:black;color:white" onClick="add(b1)">
+<input type=button name=b2 value=2 style="height:40;width:40;background:black;color:white" onClick="add(b2)">
+<input type=button name=b3 value=3 style="height:40;width:40;background:black;color:white" onClick="add(b3)">
+<input type=button name=b4 value=4 style="height:40;width:40;background:black;color:white" onClick="add(b4)"><br>
+
+<input type=button name=b5 value=5 style="height:40;width:40;background:black;color:white" onClick="add(b5)">
+<input type=button name=b6 value=6 style="height:40;width:40;background:black;color:white" onClick="add(b6)">
+<input type=button name=b7 value=7 style="height:40;width:40;background:black;color:white" onClick="add(b7)">
+<input type=button name=b8 value=8 style="height:40;width:40;background:black;color:white" onClick="add(b8)">
+<input type=button name=b9 value=9 style="height:40;width:40;background:black;color:white" onClick="add(b9)"><br>
+
+<input type=button name=b00 value=00 style="height:40;width:40;background:black;color:white" onClick="add(b00)">
+<input type=button name=b10 value=. style="height:40;width:40;background:black;color:white" onClick="add(b10)">
+<input type=button name=b11 value=+ style="height:40;width:40;background:black;color:white" onClick="add(b11)">
+<input type=button name=b12 value=- style="height:40;width:40;background:black;color:white" onClick="add(b12)">
+<input type=button name=b13 value=/ style="height:40;width:40;background:black;color:white" onClick="add(b13)"><br>
+
+<input type=button name=b14 value=* style="height:40;width:40;background:black;color:white" onClick="add(b14)">
+<input type=button name=b15 value== style="height:40;width:40;background:black;color:white" onClick="calc()">
+<input type=button name=bcl value=C style="height:40;width:40;background:black;color:white" onClick="clea()">
+<input type=button name=b16 value=On style="height:40;width:40;background:black;color:white" onClick="on()">
+<input type=button name=b17 value=off style="height:40;width:40;background:black;color:white" onClick="off()"><br>
+
+<input type=button name=b18 value=sin style="height:40;width:40;background:black;color:white" onClick="sin()">
+<input type=button name=b19 value=cos style="height:40;width:40;background:black;color:white" onClick="cos()">
+<input type=button name=b20 value=tan style="height:40;width:40;background:black;color:white" onClick="tan()">
+<input type=button name=b21 value=sqrt style="height:40;width:40;background:black;color:white" onClick="sqrt()">
+<input type=button name=b22 value=log style="height:40;width:40;background:black;color:white" onClick="log()"><br>
+
+<input type=button name=b23 value=D style="height:40;width:40;background:black;color:white" onClick="D()">
+<input type=button name=b24 value=T style="height:40;width:40;background:black;color:white" onClick="T()">
+<input type=button name=b25 value=DT style="height:40;width:40;background:black;color:white" onClick="DT()">
+<input type=button name=b26 value=% style="height:40;width:40;background:black;color:white" onClick="perc()">
+<input type=button name=b27 value=mc style="height:40;width:40;background:black;color:white" onClick="mc()"><br>
+
+<input type=button name=b28 value=mp style="height:40;width:40;background:black;color:white" onClick="mp()">
+<input type=button name=b29 value=^ style="height:40;width:40;background:black;color:white" onClick="pow()">
+<input type=button name=b29 value="<-" style="height:40;width:40;background:black;color:white" onClick="bk()">
+
+
+
+</td></tr></table></body></html>
